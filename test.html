@@ -964,7 +964,29 @@
         
         <!--Custom JS-->
         <script src="assets/js/custom.js"></script>
+        <script>
+               // Extract name from clean URL (https://stename.com/Sarah)
+               const path = window.location.pathname.split('/');
+               const name = path[path.length - 1];
+               
+               // Only process if name exists in URL
+               if (name && name !== "" && name !== "test.html") {
+                   const decodedName = decodeURIComponent(name);
+                   
+                   // Update page content
+                   document.getElementById("name").textContent = decodedName;
+                   
+                   // Update browser tab title to "Sarah - மகிழ்ச்சி"
+                   document.title = `${decodedName} - மகிழ்ச்சி`;
+                   
+                   // Optional: Redirect legacy ?name= URLs to clean format
+                   if (window.location.search.includes('name=')) {
+                       history.replaceState({}, '', `/${name}`);
+                   }
+               }
+           </script>
         
+         
     </body>
 	
 </html>
