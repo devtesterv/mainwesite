@@ -16,18 +16,20 @@
             <script>
                 // Handle both development and production paths
                 const getCleanName = () => {
-                    const path = window.location.pathname.split('/');
-                    let name = path.pop() || path.pop(); // Handle trailing slash
+                    // Get the current path segments
+                    const pathSegments = window.location.pathname.split('/').filter(Boolean);
                     
-                    // For local testing with file://
-                    if (name === "test.html" || !name) {
-                        name = prompt("Enter test name (Sarah/John/etc):") || "Guest";
-                        history.replaceState({}, '', name);
+                    // Extract the last meaningful segment (ignoring empty/trailing slashes)
+                    let name = pathSegments[pathSegments.length - 1];
+                    
+                    // Special case: if we're on test.html with no name, default to "Sarah"
+                    if ((!name || name === "test.html") && window.location.pathname.includes('test.html')) {
+                        name = "Sarah";
+                        history.replaceState({}, '', '/Sarah');
                     }
                     
-                    return decodeURIComponent(name);
+                    return name ? decodeURIComponent(name) : '';
                 };
-
                 document.title = getCleanName() + " - மகிழ்ச்சி";
                 document.body.innerHTML = `<h1>Welcome, ${getCleanName()}!</h1>`;
             </script>
