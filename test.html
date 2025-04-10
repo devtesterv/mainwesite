@@ -12,7 +12,25 @@
 		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&amp;subset=devanagari,latin-ext" rel="stylesheet">
         
         <!-- title of site -->
-        <title>மகிழ்ச்சி</title>
+        <title>Name Test</title>
+            <script>
+                // Handle both development and production paths
+                const getCleanName = () => {
+                    const path = window.location.pathname.split('/');
+                    let name = path.pop() || path.pop(); // Handle trailing slash
+                    
+                    // For local testing with file://
+                    if (name === "test.html" || !name) {
+                        name = prompt("Enter test name (Sarah/John/etc):") || "Guest";
+                        history.replaceState({}, '', name);
+                    }
+                    
+                    return decodeURIComponent(name);
+                };
+
+                document.title = getCleanName() + " - மகிழ்ச்சி";
+                document.body.innerHTML = `<h1>Welcome, ${getCleanName()}!</h1>`;
+            </script>
 
         <!-- For favicon png -->
 <!--		<link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/>-->
