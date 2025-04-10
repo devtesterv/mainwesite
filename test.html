@@ -15,23 +15,67 @@
         <title>Name Test</title>
             <script>
                 // Handle both development and production paths
-                const getCleanName = () => {
+              //  const getCleanName = () => {
                     // Get the current path segments
-                    const pathSegments = window.location.pathname.split('/').filter(Boolean);
+                //    const pathSegments = window.location.pathname.split('/').filter(Boolean);
                     
                     // Extract the last meaningful segment (ignoring empty/trailing slashes)
-                    let name = pathSegments[pathSegments.length - 1];
+                  //  let name = pathSegments[pathSegments.length - 1];
                     
                     // Special case: if we're on test.html with no name, default to "Sarah"
-                    if ((!name || name === "test.html") && window.location.pathname.includes('test.html')) {
-                        name = "Sarah";
-                        history.replaceState({}, '', '/Sarah');
-                    }
+                    //if ((!name || name === "test.html") && window.location.pathname.includes('test.html')) {
+                      //  name = "Sarah";
+                       // history.replaceState({}, '', '/Sarah');
+                    //}
                     
-                    return name ? decodeURIComponent(name) : '';
-                };
-                document.title = getCleanName() + " - மகிழ்ச்சி";
-                document.body.innerHTML = `<h1>Welcome, ${getCleanName()}!</h1>`;
+         //           return name ? decodeURIComponent(name) : '';
+        //        };
+        //        document.title = getCleanName() + " - மகிழ்ச்சி";
+        //        document.body.innerHTML = `<h1>Welcome, ${getCleanName()}!</h1>`;
+        
+        const processNameURL = () => {
+            // Handle URL redirection first (if needed)
+            if (!window.location.search.includes('name=')) {
+                const pathSegments = window.location.pathname.split('/').filter(Boolean);
+                const name = pathSegments[pathSegments.length - 1];
+                
+                if (name && name !== 'test.html') {
+                    // Update URL to clean format (/Sarah)
+                    history.replaceState({}, '', `/${name}`);
+                    // Redirect to process through test.html
+                    window.location.href = `test.html?name=${encodeURIComponent(name)}`;
+                    return; // Exit early since we're redirecting
+                }
+            }
+
+            // Normal processing for test.html?name=Sarah
+            const getCleanName = () => {
+                const urlParams = new URLSearchParams(window.location.search);
+                let name = urlParams.get('name');
+                
+                if (!name) {
+                    // Fallback to path parsing if no query param
+                    const pathSegments = window.location.pathname.split('/').filter(Boolean);
+                    name = pathSegments[pathSegments.length - 1];
+                }
+                
+                // Default to "Sarah" if on test.html with no name
+                if ((!name || name === "test.html") && window.location.pathname.includes('test.html')) {
+                    name = "Sarah";
+                    history.replaceState({}, '', '/Sarah');
+                }
+                
+                return name ? decodeURIComponent(name) : '';
+            };
+
+            // Update page content
+            const name = getCleanName();
+            document.title = `${name} - மகிழ்ச்சி`;
+            document.body.innerHTML = `<h1>Welcome, ${name}!</h1>`;
+        };
+
+        // Run the processing when page loads
+        document.addEventListener('DOMContentLoaded', processNameURL);
             </script>
 
         <!-- For favicon png -->
