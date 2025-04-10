@@ -964,34 +964,6 @@
         
         <!--Custom JS-->
         <script src="assets/js/custom.js"></script>
-        <script src="assets/js/custom.js"></script>
-        <script>
-            (function () {
-                const pathSegments = window.location.pathname.split('/').filter(Boolean);
-                const name = pathSegments[pathSegments.length - 1];
-
-                if (name && name.toLowerCase() !== 'test.html') {
-                    const decodedName = decodeURIComponent(name);
-
-                    // Safely update content if the element exists
-                    const nameElement = document.getElementById("name");
-                    if (nameElement) {
-                        nameElement.textContent = decodedName;
-                    }
-
-                    // Update the page title
-                    document.title = `${decodedName} - மகிழ்ச்சி`;
-
-                    // Optional: Normalize URL if ?name= was used before
-                    const urlParams = new URLSearchParams(window.location.search);
-                    if (urlParams.has('name')) {
-                        history.replaceState({}, '', `/${name}`);
-                    }
-                }
-            })();
-        </script>
-
-        
          
     </body>
 	
