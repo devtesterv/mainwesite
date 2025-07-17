@@ -1,28 +1,225 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>மகிழ்ச்சி</title>-->
+<!--    <style>-->
+<!--        body {-->
+<!--            margin: 0;-->
+<!--            padding: 0;-->
+<!--            height: 100vh; /* Full viewport height */-->
+<!--            overflow: hidden; /* Hide scrollbars */-->
+<!--        }-->
+<!--        -->
+<!--        .fullscreen-bg {-->
+<!--            background-image: url('https://images.alphacoders.com/135/1354417.png'); /* Replace with your image path */-->
+<!--            background-size: cover; /* Cover entire screen */-->
+<!--            background-position: center; /* Center the image */-->
+<!--            background-repeat: no-repeat;-->
+<!--            width: 100%;-->
+<!--            height: 100%;-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="fullscreen-bg"></div>-->
+<!--</body>-->
+<!--</html>-->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>மகிழ்ச்சி</title>
+    <title>Vinoth Chandramohan - Resume</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            height: 100vh; /* Full viewport height */
-            overflow: hidden; /* Hide scrollbars */
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
         }
-        
-        .fullscreen-bg {
-            background-image: url('https://images.alphacoders.com/135/1354417.png'); /* Replace with your image path */
-            background-size: cover; /* Cover entire screen */
-            background-position: center; /* Center the image */
-            background-repeat: no-repeat;
-            width: 100%;
-            height: 100%;
+        .section-title {
+            @apply text-xl font-semibold text-gray-800 border-b-2 border-blue-500 pb-2 mb-4;
+        }
+        .card {
+            @apply bg-white p-6 rounded-lg shadow-md mb-6;
+        }
+        .experience-item {
+            @apply mb-4 pb-4 border-b border-gray-200 last:border-b-0 last:pb-0;
         }
     </style>
 </head>
-<body>
-    <div class="fullscreen-bg"></div>
+<body class="antialiased text-gray-700">
+    <div class="container mx-auto p-4 sm:p-6 lg:p-8 max-w-4xl">
+        <!-- Header Section -->
+        <header class="text-center mb-8 card">
+            <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">VINOTH CHANDRAMOHAN</h1>
+            <p class="text-lg text-gray-600">Professional Summary</p>
+            <div class="flex flex-col sm:flex-row justify-center items-center mt-4 space-y-2 sm:space-y-0 sm:space-x-6">
+                <span class="flex items-center text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                        <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                    </svg>
+                    vinothchandru@hotmail.com
+                </span>
+                <span class="flex items-center text-gray-700">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                    </svg>
+                    +91 9894969851
+                </span>
+            </div>
+            <p class="mt-4 text-gray-700 leading-relaxed">
+                To become a successful professional in a highly competitive technological world where performance is rewarded with new
+                challenging responsibilities and to serve a reputed growth oriented industry in the field of Design, Development and
+                Maintenance.
+            </p>
+        </header>
+
+        <!-- Technical Skills Section -->
+        <section class="card">
+            <h2 class="section-title">TECHNICAL SKILLS</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-gray-700">
+                <div>
+                    <h3 class="font-medium text-gray-800 mb-1">Languages:</h3>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>Swift, Swift UI</li>
+                        <li>Python (Pandas, NumPy, Scikit-learn)</li>
+                        <li>SQL</li>
+                        <li>HTML5 & CSS3</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-medium text-gray-800 mb-1">Operating System:</h3>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>Apple</li>
+                    </ul>
+                    <h3 class="font-medium text-gray-800 mb-1 mt-2">Development IDE:</h3>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>Xcode</li>
+                    </ul>
+                    <h3 class="font-medium text-gray-800 mb-1 mt-2">Version Control:</h3>
+                    <ul class="list-disc list-inside ml-4">
+                        <li>GitHub and Source Tree</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section class="card">
+            <h2 class="section-title">CERTIFICATION</h2>
+            <ul class="list-disc list-inside ml-4 text-gray-700">
+                <li>Course: Data Science (Pumo Technovation India Private Limited)</li>
+                <li>Certified course in Software Engineering</li>
+                <li>Advanced Diploma in Software Testing</li>
+            </ul>
+            <h3 class="font-medium text-gray-800 mt-4 mb-1">Data Science Technical Skills:</h3>
+            <ul class="list-disc list-inside ml-4 text-gray-700">
+                <li>Data Analysis: Regression, Clustering, Data Visualization (Matplotlib, Seaborn)</li>
+                <li>Machine Learning: Supervised & Unsupervised Learning, NLP</li>
+            </ul>
+        </section>
+
+        <!-- Professional Experience Section -->
+        <section class="card">
+            <h2 class="section-title">PROFESSIONAL EXPERIENCE</h2>
+
+            <div class="experience-item">
+                <h3 class="text-lg font-semibold text-gray-800">DigiSME Software Pvt Ltd (formerly known as Majulah Infotech Private Limited)</h3>
+                <p class="text-sm text-gray-500 mb-2">Aug 2023 - Sep 2024</p>
+                <p class="font-medium text-gray-700">Responsibility: Handler of customer tickets and bug fixing</p>
+                <p class="text-gray-700 mt-1">Projects: Infotech HRMS app, DigiSME India app</p>
+                <ul class="list-disc list-inside ml-4 text-gray-700 mt-2">
+                    <li>DigiSME HRMS app makes attendance checking, leaves and claims approvals, and internal HR-to-employee communications fast and convenient for HR managers and staff.</li>
+                    <li>Clock-in/out is fast and secure via facial recognition with GPS timestamp.</li>
+                    <li>Employees can view payslips, apply leaves and submit claims.</li>
+                    <li>HR managers can approve claims and leaves on-the-go.</li>
+                    <li>Leave application and approval alerts are sent in real-time to both manager and employee.</li>
+                    <li>App allows employees to update their personal particulars and submit for HR approval.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3 class="text-lg font-semibold text-gray-800">Colan Infotech Pvt. Ltd, Chennai</h3>
+                <p class="text-sm text-gray-500 mb-2">Sept 2022 - Apl 2023</p>
+                <p class="font-medium text-gray-700">Responsibility: Handler of the project</p>
+                <p class="text-gray-700 mt-1">Project: Smarket</p>
+                <p class="text-gray-700 mt-2">Smarket provides an All-in-One platform for merchants to promote their brand and business. SMARKET helps customers to earn rewards while helping their friends to make wise choices. Hence SMARTER world thru Social Marketing.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3 class="text-lg font-semibold text-gray-800">Doodleblue Innovations Pvt. Ltd, Chennai</h3>
+                <p class="text-sm text-gray-500 mb-2">Sept 2021 - Jun 2022</p>
+                <p class="font-medium text-gray-700">Responsibility: Handler of the project revamp</p>
+                <p class="text-gray-700 mt-1">Projects: gcube & Asianpaint (revamp project)</p>
+                <ul class="list-disc list-inside ml-4 text-gray-700 mt-2">
+                    <li>gcube is an event creating app, based on categories to create and conduct private or public events.</li>
+                    <li>Asianpaint has two different kinds of managing projects applications and a project manager managing project application.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3 class="text-lg font-semibold text-gray-800">Tranxit Technology Solutions Pvt. Ltd, Chennai</h3>
+                <p class="text-sm text-gray-500 mb-2">May 2021 - Sep 2021</p>
+                <p class="font-medium text-gray-700">Responsibility: Assigned task support with senior developer</p>
+                <p class="text-gray-700 mt-1">Product Projects: FRT Product Based Project (food delivery, travel booking and more)</p>
+            </div>
+
+            <div class="experience-item">
+                <h3 class="text-lg font-semibold text-gray-800">Osiz Technologies Private Ltd, Madurai</h3>
+                <p class="text-sm text-gray-500 mb-2">Dec 2019 - Feb 2021</p>
+                <p class="font-medium text-gray-700">Responsibility: Assigned task support with senior developer</p>
+                <p class="text-gray-700 mt-1">Projects: Burr, Bbampay and buybitcoins</p>
+                <ul class="list-disc list-inside ml-4 text-gray-700 mt-2">
+                    <li>Burr: Man and Women hair styling machine, MVC pattern.</li>
+                    <li>Bbampay: Exchange cryptocurrency and wallet, MVVM pattern.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3 class="text-lg font-semibold text-gray-800">Stridus Infotech India Pvt. Ltd, Bangalore</h3>
+                <p class="text-sm text-gray-500 mb-2">Sep 2018 - Jul 2019</p>
+                <p class="font-medium text-gray-700">Project: Colabus</p>
+                <p class="text-gray-700 mt-2">The cross-platform application that lets you collaborate with your colleagues, anytime, anywhere using your mobile device or web browser. Colabus provides an easy-to-use mechanism for information and idea sharing amongst project teams, storing and routing documents using the built-in repository, and creating custom workflows to manage tasks amongst team members.</p>
+            </div>
+
+            <div class="experience-item">
+                <h3 class="text-lg font-semibold text-gray-800">Dotwings Software Solution, Pollachi</h3>
+                <p class="text-sm text-gray-500 mb-2">Jan 2018 - May 2018</p>
+                <p class="font-medium text-gray-700">Role: Junior Web Developer</p>
+                <p class="text-gray-700 mt-1">Projects: Pollachi amirthaa, Adams Sourcing, Annai Teresa Educational Trust</p>
+            </div>
+        </section>
+
+        <!-- Education Qualification Section -->
+        <section class="card">
+            <h2 class="section-title">EDUCATION QUALIFICATION</h2>
+            <ul class="list-disc list-inside ml-4 text-gray-700">
+                <li>MCA at Vidyasagar College of Arts and Science at Udumalpet secured with CGPA 66%.</li>
+                <li>B.Sc. Computer Science at Vidyasagar College of Arts and Science at Udumalpet secured with 60%.</li>
+            </ul>
+        </section>
+
+        <!-- Personal Details Section -->
+        <section class="card">
+            <h2 class="section-title">PERSONAL DETAILS</h2>
+            <div class="text-gray-700">
+                <p><span class="font-medium">Father's Name:</span> Mr. T.Chandra Mohan</p>
+                <p><span class="font-medium">DOB:</span> 22nd September 1994</p>
+                <p><span class="font-medium">Languages Known:</span> Tamil, English</p>
+                <p><span class="font-medium">Present Address:</span> 4/268A, Siva Sakthi Colony, Udumalpet, Tiruppur - 642126</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center text-gray-500 text-sm mt-8 pb-4">
+            <p>&copy; 2025 Vinoth Chandramohan. All rights reserved.</p>
+        </footer>
+    </div>
 </body>
 </html>
