@@ -212,7 +212,7 @@
                     </div>
                     <div class="mb-6">
                         <label for="email" class="block text-gray-700 text-sm font-medium mb-2">Email</label>
-                        <!-- 'name' attribute should be '_replyto' for EmailJS to set the reply-to address correctly -->
+                        <!-- 'name' attribute should be 'email' here, assuming your template uses {{email}} -->
                         <input type="email" id="email" name="email" class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-purple-500 transition duration-200" placeholder="your.email@example.com" required>
                     </div>
                     <div class="mb-6">
@@ -414,8 +414,7 @@
                 showFormStatusMessage('Sending your message...', 'info');
 
                 // Use your service ID & template ID
-                // The values for service_id and template_id are taken from your provided code.
-                emailjs.sendForm("service_wvlm10m", "template_uvpqpzj", this)
+                emailjs.sendForm("service_wvlm10m", "template_3ad3yh8", this) // <-- Template ID updated here
                     .then(() => {
                         console.log('SUCCESS!');
                         showFormStatusMessage('✅ Message sent successfully! We will get back to you soon.', 'success');
