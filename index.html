@@ -3,26 +3,443 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>மகிழ்ச்சி</title>
+    <title>Your Brand - T-Shirt & Casual Dress Designs</title>
+    <!-- Tailwind CSS CDN for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter for clean typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Apply 'Inter' font globally and ensure smooth text rendering */
         body {
-            margin: 0;
-            padding: 0;
-            height: 100vh; /* Full viewport height */
-            overflow: hidden; /* Hide scrollbars */
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden; /* Prevent horizontal scroll on smaller screens */
         }
-        
-        .fullscreen-bg {
-            background-image: url('https://images.alphacoders.com/135/1354417.png'); /* Replace with your image path */
-            background-size: cover; /* Cover entire screen */
-            background-position: center; /* Center the image */
-            background-repeat: no-repeat;
-            width: 100%;
-            height: 100%;
+        /* Custom scrollbar for better aesthetics across browsers */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
         }
     </style>
 </head>
-<body>
-    <div class="fullscreen-bg"></div>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header & Hero Section: The very first section users see, designed to be visually appealing. -->
+    <header class="relative bg-gradient-to-r from-purple-600 to-indigo-700 py-16 md:py-24 lg:py-32 overflow-hidden rounded-b-3xl">
+        <div class="absolute inset-0 z-0">
+            <!-- Background pattern for visual appeal, created with SVG -->
+            <svg class="absolute inset-0 h-full w-full stroke-purple-400 opacity-20" fill="none">
+                <defs>
+                    <pattern id="pattern-bg" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <path d="M0 20V0H20" stroke-width="0.5" />
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" stroke-width="0" fill="url(#pattern-bg)" />
+            </svg>
+        </div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-4 animate-fade-in-down">
+                Unleash Your Style
+            </h1>
+            <p class="text-lg sm:text-xl text-indigo-100 mb-8 max-w-2xl mx-auto animate-fade-in-up">
+                Discover unique T-shirt and casual dress designs that speak to you.
+            </p>
+            <!-- Call to action button to scroll down to designs section -->
+            <a href="#designs" class="inline-block bg-white text-purple-700 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+                Explore Designs
+            </a>
+        </div>
+    </header>
+
+    <!-- About Us Section: Provides information about the brand and its mission. -->
+    <section id="about" class="py-16 md:py-24 bg-white rounded-3xl -mt-8 mx-4 sm:mx-8 md:mx-16 lg:mx-24 shadow-xl relative z-20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-8">About Our Brand</h2>
+            <div class="max-w-3xl mx-auto text-lg text-gray-700 leading-relaxed">
+                <p class="mb-4">
+                    At <span class="font-semibold text-purple-600">Your Brand</span>, we believe fashion is a form of self-expression. We are passionate about creating high-quality, comfortable, and stylish T-shirts and casual dresses that empower you to showcase your individuality.
+                </p>
+                <p>
+                    Each design is crafted with care, focusing on unique aesthetics and sustainable practices. We blend artistic vision with everyday wearability, ensuring you look and feel great in every piece.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Designs Section: Showcases the product designs in a grid layout. -->
+    <section id="designs" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-12">Our Latest Designs</h2>
+
+            <!-- Design Grid: Container for all design cards, dynamically loaded by JavaScript. -->
+            <div id="design-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Sample Design Card 1: T-Shirt. Images are placeholders. -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                    <img src="https://placehold.co/600x400/805ad5/ffffff?text=Design+1+-+T-Shirt" alt="Geometric T-Shirt Design" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Geometric Harmony Tee</h3>
+                        <p class="text-gray-600 text-sm mb-4">A minimalist T-shirt featuring intricate geometric patterns, perfect for a modern, artistic look.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-purple-700 font-bold text-lg">$29.99</span>
+                            <button class="bg-purple-600 text-white py-2 px-5 rounded-full text-sm font-medium hover:bg-purple-700 transition duration-300">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Design Card 2: Casual Dress -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                    <img src="https://placehold.co/600x400/6b46c1/ffffff?text=Design+2+-+Dress" alt="Floral Casual Dress Design" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Summer Bloom Dress</h3>
+                        <p class="text-gray-600 text-sm mb-4">Light and airy casual dress with a vibrant floral print, ideal for warm weather and relaxed days.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-purple-700 font-bold text-lg">$49.99</span>
+                            <button class="bg-purple-600 text-white py-2 px-5 rounded-full text-sm font-medium hover:bg-purple-700 transition duration-300">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Design Card 3: T-Shirt -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                    <img src="https://placehold.co/600x400/805ad5/ffffff?text=Design+3+-+T-Shirt" alt="Abstract T-Shirt Design" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Abstract Expression Tee</h3>
+                        <p class="text-gray-600 text-sm mb-4">Bold and colorful abstract art on a comfortable tee, perfect for making a statement.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-purple-700 font-bold text-lg">$34.99</span>
+                            <button class="bg-purple-600 text-white py-2 px-5 rounded-full text-sm font-medium hover:bg-purple-700 transition duration-300">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Design Card 4: Casual Dress -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                    <img src="https://placehold.co/600x400/6b46c1/ffffff?text=Design+4+-+Dress" alt="Minimalist Casual Dress" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Urban Chic Mini Dress</h3>
+                        <p class="text-gray-600 text-sm mb-4">A sleek, solid-color casual dress with a modern silhouette, versatile for any occasion.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-purple-700 font-bold text-lg">$54.99</span>
+                            <button class="bg-purple-600 text-white py-2 px-5 rounded-full text-sm font-medium hover:bg-purple-700 transition duration-300">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Design Card 5: T-Shirt -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                    <img src="https://placehold.co/600x400/805ad5/ffffff?text=Design+5+-+T-Shirt" alt="Nature Inspired T-Shirt" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Nature's Whisper Tee</h3>
+                        <p class="text-gray-600 text-sm mb-4">Soft cotton tee with a delicate nature-inspired graphic, offering comfort and style.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-purple-700 font-bold text-lg">$27.99</span>
+                            <button class="bg-purple-600 text-white py-2 px-5 rounded-full text-sm font-medium hover:bg-purple-700 transition duration-300">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sample Design Card 6: Casual Dress -->
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                    <img src="https://placehold.co/600x400/6b46c1/ffffff?text=Design+6+-+Dress" alt="Boho Casual Dress" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Bohemian Rhapsody Dress</h3>
+                        <p class="text-gray-600 text-sm mb-4">Flowy bohemian-style dress with embroidered details, perfect for a relaxed, artistic vibe.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-purple-700 font-bold text-lg">$59.99</span>
+                            <button class="bg-purple-600 text-white py-2 px-5 rounded-full text-sm font-medium hover:bg-purple-700 transition duration-300">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Button to toggle visibility of more designs -->
+            <div class="text-center mt-12">
+                <button id="toggle-designs-btn" class="inline-block bg-purple-100 text-purple-700 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-purple-200 transition duration-300 transform hover:scale-105">
+                    View All Designs
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action / Custom Orders Section: Encourages users to request custom designs. -->
+    <section id="custom-orders" class="py-16 md:py-24 bg-purple-700 text-white rounded-3xl mx-4 sm:mx-8 md:mx-16 lg:mx-24 shadow-xl relative z-20">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold mb-8">Have a Unique Idea?</h2>
+            <p class="text-lg sm:text-xl mb-8 max-w-2xl mx-auto opacity-90">
+                We love bringing your vision to life! Contact us for custom T-shirt and casual dress designs tailored just for you.
+            </p>
+            <!-- Call to action button to scroll to contact section -->
+            <a href="#contact" class="inline-block bg-white text-purple-700 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+                Request Custom Design
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section: Contains the form for users to get in touch, now integrated with EmailJS. -->
+    <section id="contact" class="py-16 md:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-12">Get in Touch</h2>
+            <div class="max-w-md mx-auto bg-white p-8 rounded-2xl shadow-lg">
+                <!-- Contact Form for EmailJS -->
+                <!-- The 'id' of the form ('contact-form') is crucial for EmailJS to target it. -->
+                <form id="contact-form">
+                    <div class="mb-6">
+                        <label for="name" class="block text-gray-700 text-sm font-medium mb-2">Name</label>
+                        <!-- 'name' attribute must match the variable in your EmailJS template (e.g., {{name}}) -->
+                        <input type="text" id="name" name="name" class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-purple-500 transition duration-200" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-gray-700 text-sm font-medium mb-2">Email</label>
+                        <!-- 'name' attribute should be '_replyto' for EmailJS to set the reply-to address correctly -->
+                        <input type="email" id="email" name="_replyto" class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-purple-500 transition duration-200" placeholder="your.email@example.com" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 text-sm font-medium mb-2">Message</label>
+                        <!-- 'name' attribute must match the variable in your EmailJS template (e.g., {{message}}) -->
+                        <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-purple-500 transition duration-200" placeholder="Tell us about your design idea or inquiry..." required></textarea>
+                    </div>
+                    <!-- The submit button will trigger the EmailJS sendForm function -->
+                    <button type="submit" class="w-full bg-purple-600 text-white font-bold py-3 px-6 rounded-full hover:bg-purple-700 transition duration-300 transform hover:scale-105 shadow-md">
+                        Send Message
+                    </button>
+                    <!-- Message box for success/failure feedback -->
+                    <div id="form-status-message" class="mt-4 text-center text-sm font-semibold"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer: Standard footer with brand name, slogan, and social media links. -->
+    <footer class="bg-gray-900 text-white py-12 rounded-t-3xl mt-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="mb-6">
+                <h3 class="text-2xl font-bold mb-2">Your Brand</h3>
+                <p class="text-gray-400">Unique Designs, Unmatched Style</p>
+            </div>
+            <!-- Social media icons (placeholders for actual links) -->
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300" aria-label="Facebook">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300" aria-label="Instagram">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.002 3.797.048.843.038 1.487.171 2.04.355.603.192 1.07.42 1.504.808.435.388.788.852 1.128 1.41.34.558.521 1.176.588 1.91.063.754.048 1.067.048 3.291V12.315c0 2.43-.002 2.784-.048 3.797-.038.843-.171 1.487-.355 2.04-.192.603-.42 1.07-.808 1.504-.388-.435-.852-.788-1.41-1.128-.558-.34-1.176-.521-1.91-.588-.754.063-1.067-.048-3.291-.048H12.315c-2.43 0-2.784-.002-3.797-.048-.843-.038-1.487-.171-2.04-.355-.603-.192-1.07-.42-.808-1.504-.388-.435-.788-.852-1.128-1.41-.34-.558-.521-1.176-.588-1.91-.063-.754-.048-1.067-.048-3.291V11.685c0-2.43.002-2.784.048-3.797.038-.843.171-1.487.355-2.04.192-.603.42-1.07.808-1.504.388-.435.852-.788 1.41-1.128.558-.34 1.176-.521 1.91-.588.754-.063 1.067-.048 3.291-.048H12.315zM12 7.749c-2.345 0-4.251 1.906-4.251 4.251S9.655 16.251 12 16.251s4.251-1.906 4.251-4.251S14.345 7.749 12 7.749zM12 14a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300" aria-label="LinkedIn">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M.953 0H23.047A.953.953 0 0124 .953v22.094a.953.953 0 01-.953.953H.953A.953.953 0 010 23.047V.953A.953.953 0 01.953 0zm19.82 5.053c.433 0 .786-.353.786-.787S21.206 3.48 20.773 3.48c-.432 0-.786.353-.786.786s.354.787.786.787zM12 8.35c2.567 0 4.65 2.083 4.65 4.65s-2.083 4.65-4.65 4.65-4.65-2.083-4.65-4.65 2.083-4.65 4.65-4.65zm0 1.55a3.1 3.1 0 100 6.2 3.1 3.1 0 000-6.2zM2.5 22.5h3.093V14.12h-3.093v8.38zm7.368 0H12.96V14.004c0-.064.008-.12.016-.174.044-.298.196-.68.484-.968.288-.288.67-.484.968-.484.053 0 .108.008.174.016.29.044.672.196.96.484.288.288.484.67.484.968.008.053.016.108.016.174v8.496h3.093V13.04c0-2.47-1.32-3.79-3.418-3.79-1.92 0-2.85 1.072-3.13 2.53v-.018l-.014-.148h-.032V9.288h-3.094v13.212z" />
+                    </svg>
+                </a>
+            </div>
+            <p class="text-gray-500 text-sm">&copy; 2025 Your Brand. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- EmailJS CDN for client-side email sending -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        // Initialize EmailJS with your Public Key
+        // IMPORTANT: Replace "YOUR_PUBLIC_KEY" with your actual EmailJS Public Key.
+        (function() {
+            emailjs.init({
+              publicKey: "cNxRi5FJv9qIPJ-H0",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        // Function to show feedback messages to the user
+        function showFormStatusMessage(message, type) {
+            const statusMessageElement = document.getElementById('form-status-message');
+            statusMessageElement.textContent = message;
+            if (type === 'success') {
+                statusMessageElement.className = 'mt-4 text-center text-sm font-semibold text-green-600';
+            } else if (type === 'error') {
+                statusMessageElement.className = 'mt-4 text-center text-sm font-semibold text-red-600';
+            } else {
+                 statusMessageElement.className = 'mt-4 text-center text-sm font-semibold text-gray-700';
+            }
+        }
+
+        window.onload = function() {
+            const toggleDesignsBtn = document.getElementById('toggle-designs-btn');
+            const designGrid = document.getElementById('design-grid');
+            let designsVisible = 6; // Initially 6 designs are visible
+
+            // Array of additional design cards to be loaded dynamically.
+            const additionalDesigns = [
+                `
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                    <img src="https://placehold.co/600x400/a0aec0/ffffff?text=Design+7+-+T-Shirt" alt="Vintage T-Shirt Design" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Vintage Vibes Tee</h3>
+                        <p class="text-gray-600 text-sm mb-4">A retro-inspired T-shirt design with classic typography and muted colors.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-purple-700 font-bold text-lg">$32.99</span>
+                            <button class="bg-purple-600 text-white py-2 px-5 rounded-full text-sm font-medium hover:bg-purple-700 transition duration-300">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                `,
+                `
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                    <img src="https://placehold.co/600x400/9f7aea/ffffff?text=Design+8+-+Dress" alt="Striped Casual Dress" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Coastal Stripe Dress</h3>
+                        <p class="text-gray-600 text-sm mb-4">Comfortable casual dress with horizontal stripes, perfect for a relaxed coastal look.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-purple-700 font-bold text-lg">$52.99</span>
+                            <button class="bg-purple-600 text-white py-2 px-5 rounded-full text-sm font-medium hover:bg-purple-700 transition duration-300">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                `,
+                `
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                    <img src="https://placehold.co/600x400/a0aec0/ffffff?text=Design+9+-+T-Shirt" alt="Graphic Print T-Shirt" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Urban Graphic Tee</h3>
+                        <p class="text-gray-600 text-sm mb-4">A street-style T-shirt with a bold graphic print, ideal for urban fashion enthusiasts.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-purple-700 font-bold text-lg">$31.99</span>
+                            <button class="bg-purple-600 text-white py-2 px-5 rounded-full text-sm font-medium hover:bg-purple-700 transition duration-300">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                `,
+                `
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                    <img src="https://placehold.co/600x400/9f7aea/ffffff?text=Design+10+-+Dress" alt="Maxi Casual Dress" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Ethereal Maxi Dress</h3>
+                        <p class="text-gray-600 text-sm mb-4">A flowing maxi dress with subtle patterns, offering elegance and comfort.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-purple-700 font-bold text-lg">$65.99</span>
+                            <button class="bg-purple-600 text-white py-2 px-5 rounded-full text-sm font-medium hover:bg-purple-700 transition duration-300">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                `,
+                `
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                    <img src="https://placehold.co/600x400/a0aec0/ffffff?text=Design+11+-+T-Shirt" alt="Minimalist Logo Tee" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Simple Logo Tee</h3>
+                        <p class="text-gray-600 text-sm mb-4">A clean T-shirt with a subtle brand logo, perfect for everyday wear.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-purple-700 font-bold text-lg">$25.99</span>
+                            <button class="bg-purple-600 text-white py-2 px-5 rounded-full text-sm font-medium hover:bg-purple-700 transition duration-300">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                `,
+                `
+                <div class="bg-white rounded-2xl shadow-lg overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+                    <img src="https://placehold.co/600x400/9f7aea/ffffff?text=Design+12+-+Dress" alt="Polka Dot Dress" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Playful Polka Dress</h3>
+                        <p class="text-gray-600 text-sm mb-4">A fun and charming polka dot casual dress, bringing a touch of whimsy to your wardrobe.</p>
+                        <div class="flex items-center justify-between">
+                            <span class="text-purple-700 font-bold text-lg">$47.99</span>
+                            <button class="bg-purple-600 text-white py-2 px-5 rounded-full text-sm font-medium hover:bg-purple-700 transition duration-300">
+                                View Details
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                `
+            ];
+
+            let allDesignsLoaded = false; // Flag to track if all designs are currently visible
+
+            // Event listener for the "View All Designs" button
+            toggleDesignsBtn.addEventListener('click', function(event) {
+                event.preventDefault(); // Prevent the default action of the button (e.g., page reload for an anchor tag)
+
+                if (!allDesignsLoaded) {
+                    // If not all designs are loaded, append the additional designs to the grid
+                    additionalDesigns.forEach(designHtml => {
+                        const div = document.createElement('div'); // Create a temporary div to parse the HTML string
+                        div.innerHTML = designHtml.trim(); // Trim whitespace and set innerHTML
+                        designGrid.appendChild(div.firstChild); // Append the first child (the actual design card div) to the grid
+                    });
+                    toggleDesignsBtn.textContent = 'Show Less Designs'; // Change button text
+                    allDesignsLoaded = true; // Update the flag
+                } else {
+                    // If all designs are loaded, remove the additional designs from the grid
+                    for (let i = 0; i < additionalDesigns.length; i++) {
+                        if (designGrid.lastChild) { // Ensure there is a last child to remove
+                            designGrid.removeChild(designGrid.lastChild); // Remove the last appended child
+                        }
+                    }
+                    toggleDesignsBtn.textContent = 'View All Designs'; // Change button text back
+                    allDesignsLoaded = false; // Update the flag
+                }
+            });
+
+            // EmailJS Form Submission Logic
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault(); // Prevent default form submission
+
+                const sendButton = event.target.querySelector('button[type="submit"]');
+                const originalButtonText = sendButton.textContent;
+                sendButton.textContent = 'Sending...'; // Show sending status
+                sendButton.disabled = true; // Disable button to prevent multiple submissions
+                showFormStatusMessage('Sending your message...', 'info');
+
+                // these IDs are from the previous steps in EmailJS dashboard: Service ID and Template ID
+                // IMPORTANT: Replace 'contact_service' and 'contact_form' with your actual EmailJS IDs.
+                emailjs.sendForm('contact_service', 'contact_form', this)
+                    .then(() => {
+                        console.log('SUCCESS!');
+                        showFormStatusMessage('Message sent successfully! We\'ll get back to you soon.', 'success');
+                        event.target.reset(); // Clear the form fields
+                    }, (error) => {
+                        console.error('FAILED...', error);
+                        showFormStatusMessage('Failed to send message. Please try again later.', 'error');
+                    })
+                    .finally(() => {
+                        sendButton.textContent = originalButtonText; // Restore button text
+                        sendButton.disabled = false; // Re-enable button
+                    });
+            });
+        };
+    </script>
+
 </body>
 </html>
+
